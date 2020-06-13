@@ -724,7 +724,7 @@ main {
   justify-content: center;
   align-items: center;
 
-  fill: inherit;
+  fill: var(--clients-icons-primary-color);
 
   width: 170px;
   height: 90px;
@@ -738,20 +738,9 @@ main {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.our-clients .item {
-  fill: var(--clients-icons-primary-color);
-
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .our-clients .link:hover,
 .our-clients .link:focus {
   border-color: var(--accent-color);
-}
-
-.our-clients .item:hover,
-.our-clients .item:focus {
   fill: var(--accent-color);
 }
 
@@ -1032,8 +1021,8 @@ body-nav-button-primary-color #F5F4FA */
   margin-left: 30px;
 }
 
-.portfolio-preview .item:hover,
-.portfolio-preview .item:focus {
+.portfolio-preview a:hover,
+.portfolio-preview a:focus {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
     0px 1px 1px rgba(0, 0, 0, 0.12);
 }
@@ -1087,8 +1076,8 @@ body-nav-button-primary-color #F5F4FA */
   transform: translateY(0);
 }
 
-.portfolio-preview .item:hover .item-text,
-.portfolio-preview .item:focus .item-text {
+.portfolio-preview a:hover .item-text,
+.portfolio-preview a:focus .item-text {
   opacity: 1;
 
   transform: translateY(-100%);
