@@ -80,7 +80,7 @@
           <div class="backdrop is-hidden" data-backdrop>
             <div class="modal">
               <button data-close-modal type="button" class="modal-close">
-                <svg class="modal-close-icon" width="11" height="11">
+                <svg class="modal-close-icon" width="18" height="18">
                   <use href="./images/symbol-defs.svg#close-cross"></use>
                 </svg>
               </button>
@@ -88,50 +88,71 @@
                 <b class="form-title"
                   >Оставьте свои данные, мы вам перезвоним</b
                 >
-                <form action="./index.html">
+                <form action="./index.html" autocomplete="off">
                   <ul class="form-list list">
                     <li class="item">
-                      <label for="name" class="hero-form-name">
+                      <label class="form-field-name">
                         <input
                           type="text"
-                          id="name"
                           name="name"
-                          placeholder="Имя"
+                          placeholder=" "
                           class="form-input-name"
                         />
+                        <span class="form-label-name">Имя</span>
+                        <span>
+                          <svg class="icon">
+                            <use
+                              href="./images/symbol-defs.svg#form-person"
+                            ></use>
+                          </svg>
+                        </span>
                       </label>
                     </li>
                     <li class="item">
-                      <label for="phone">
+                      <label class="form-field-phone">
                         <input
                           type="tel"
-                          id="phone"
                           name="phone"
-                          placeholder="Телефон"
+                          placeholder=" "
                           class="form-input-phone"
                         />
+                        <span class="form-label-phone">Телефон</span>
+                        <span>
+                          <svg class="icon">
+                            <use
+                              href="./images/symbol-defs.svg#form-phone"
+                            ></use>
+                          </svg>
+                        </span>
                       </label>
                     </li>
                     <li class="item">
-                      <label for="email">
+                      <label class="form-field-email">
                         <input
                           type="email"
-                          id="email"
                           name="email"
-                          placeholder="Почта"
+                          placeholder=" "
                           class="form-input-email"
                         />
+                        <span class="form-label-email">Почта</span>
+                        <span>
+                          <svg class="icon">
+                            <use
+                              href="./images/symbol-defs.svg#form-email"
+                            ></use>
+                          </svg>
+                        </span>
                       </label>
                     </li>
                     <li>
-                      <label for="comment">
+                      <label class="form-field-textarea">
                         <textarea
                           name="comment"
-                          id="comment"
                           rows="6"
-                          placeholder="Комментарий"
+                          placeholder=" "
                           class="form-textarea"
                         ></textarea>
+                        <span class="textarea-label-comment">Комментарий</span>
                       </label>
                     </li>
                   </ul>
@@ -144,7 +165,7 @@
                         class="form-agreement-input"
                       />
                       <span class="form-agreement-icon">
-                        <svg class="form-agreement-svg" width="15" height="15">
+                        <svg class="form-agreement-svg">
                           <use
                             href="./images/symbol-defs.svg#empty-checkbox"
                           ></use>
@@ -152,10 +173,10 @@
                       </span>
                       <span class="form-agreement-text">
                         Соглашаюсь с рассылкой и принимаю&nbsp;
+                        <a href="./index.html" class="form-agreement-link"
+                          >Условия договора</a
+                        >
                       </span>
-                      <a href="./index.html" class="form-agreement-link"
-                        >Условия договора</a
-                      >
                     </label>
                   </div>
                   <button class="form-button-send" type="button">
@@ -705,10 +726,9 @@
               </li>
             </ul>
           </div>
-          <form action="./index.html" method="post" class="footer-form">
-            <label>
-              <span class="title">подпишитесь на рассылку</span>
-
+          <div>
+            <p class="title">подпишитесь на рассылку</p>
+            <form action="./index.html" method="post" class="footer-form">
               <input
                 type="email"
                 name="email"
@@ -716,15 +736,14 @@
                 style="width: 358px; height: 50px;"
                 class="subscription-input"
               />
-            </label>
-
-            <button type="submit" class="button-footer">
-              Подписаться
-              <svg class="portfolio-icon-send" width="24" height="24">
-                <use href="./images/symbol-defs.svg#icon-send"></use>
-              </svg>
-            </button>
-          </form>
+              <button type="submit" class="button-footer">
+                Подписаться
+                <svg class="portfolio-icon-send" width="24" height="24">
+                  <use href="./images/symbol-defs.svg#icon-send"></use>
+                </svg>
+              </button>
+            </form>
+          </div>
         </div>
         <div class="copyright">
           <p class="authors" lang="en">2020 | Developed by GoIT Students</p>

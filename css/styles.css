@@ -308,7 +308,7 @@ main {
 
   min-height: 300px;
   min-width: 400px;
-  padding: 15px;
+  padding: 40px;
 
   background-color: #fff;
 
@@ -323,8 +323,8 @@ main {
 
 .modal-close {
   position: absolute;
-  right: -7px;
-  top: -7px;
+  right: 8px;
+  top: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -333,13 +333,18 @@ main {
   border-radius: 50%;
   border: none;
   background-color: #ffffff;
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  fill: inherit;
+}
+
+.modal-close:focus,
+.modal-close:hover {
+  fill: var(--accent-color);
 }
 
 .form-title {
   display: block;
-  margin-top: 40px;
   margin-bottom: 30px;
 
   font-family: Roboto;
@@ -356,45 +361,148 @@ main {
   margin-bottom: 28px;
 }
 
+.form-list > .item {
+  height: 40px;
+}
+
 .form-input-name,
 .form-input-phone,
 .form-input-email {
   width: 448px;
   height: 40px;
+  padding-left: 42px;
 
-  margin-left: 40px;
-  margin-right: 40px;
-}
-
-.form-input-name::placeholder,
-.form-input-phone::placeholder,
-.form-input-email::placeholder,
-.form-textarea::placeholder {
-  padding-left: 16px;
-
-  font-family: Roboto;
-  font-size: 14px;
-  line-height: 1.12;
-  letter-spacing: 0.01em;
-
-  color: var(--primary-title-color);
-}
-
-.form-textarea::placeholder {
-  padding-top: 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 }
 
 .form-textarea {
   width: 448px;
+  height: 120px;
+  resize: none;
+  padding-left: 16px;
+  padding-top: 12px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-field-name,
+.form-field-phone,
+.form-field-email,
+.form-field-textarea {
+  position: relative;
+  display: block;
+}
+
+.form-label-name,
+.form-label-phone,
+.form-label-email {
+  position: absolute;
+  left: 42px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-size: 14px;
+  line-height: 1, 13;
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
+}
+
+.textarea-label-comment {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-size: 14px;
+  line-height: 1, 13;
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
+}
+
+.form-field-name .icon,
+.form-field-phone .icon,
+.form-field-email .icon {
+  position: absolute;
+  top: 11px;
+  left: 16px;
+  width: 18px;
+  height: 18px;
+  fill: inherit;
+}
+
+.form-input-name:focus,
+.form-input-name:hover,
+.form-input-phone:focus,
+.form-input-phone:hover,
+.form-input-email:focus,
+.form-input-email:hover,
+.form-textarea:focus,
+.form-textarea:hover {
+  border: 1px solid var(--accent-color);
+  cursor: pointer;
+}
+
+.form-field-name:focus-within .icon,
+.form-field-phone:focus-within .icon,
+.form-field-email:focus-within .icon {
+  fill: var(--accent-color);
+}
+
+.form-field-name:focus-within > .form-label-name,
+.form-input-name:not(:placeholder-shown) + .form-label-name {
+  transform: translate(-110%, -300%);
+
+  font-size: 12px;
+  line-height: 1, 16;
+  letter-spacing: 0.01em;
+
+  color: var(--accent-color);
+}
+
+.form-field-phone:focus-within > .form-label-phone,
+.form-input-phone:not(:placeholder-shown) + .form-label-phone {
+  transform: translate(-55%, -300%);
+
+  font-size: 12px;
+  line-height: 1, 16;
+  letter-spacing: 0.01em;
+
+  color: var(--accent-color);
+}
+
+.form-field-email:focus-within > .form-label-email,
+.form-input-email:not(:placeholder-shown) + .form-label-email {
+  transform: translate(-70%, -300%);
+
+  font-size: 12px;
+  line-height: 1, 16;
+  letter-spacing: 0.01em;
+
+  color: var(--accent-color);
+}
+
+.form-field-textarea:focus-within > .textarea-label-comment,
+.form-textarea:not(:placeholder-shown) + .textarea-label-comment {
+  transform: translate(0%, -230%);
+
+  font-size: 12px;
+  line-height: 1, 16;
+  letter-spacing: 0.01em;
+
+  color: var(--accent-color);
 }
 
 .form-button-send {
   margin-top: 30px;
-  margin-bottom: 40px;
 }
 
 .form-agreement-text,
-.font-agreement-link {
+.form-agreement-link {
   margin: 0;
   padding: 0;
 
@@ -405,6 +513,7 @@ main {
 
   color: var(--primary-text-color);
 }
+
 .form-caption {
   display: flex;
   justify-content: center;
@@ -414,10 +523,6 @@ main {
 }
 
 .form-agreement-link {
-  display: flex;
-  align-self: center;
-  text-decoration: none;
-
   color: var(--accent-color);
   text-decoration: underline;
 }
@@ -438,18 +543,27 @@ main {
   overflow: hidden;
 }
 
+.form-agreement-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+
+  margin-right: 8px;
+
+  transition: transform 250ms linear;
+}
+
 .form-agreement-icon > .form-agreement-svg {
   display: inline-block;
-  width: 15px;
+  width: 16px;
   height: 15px;
-  margin-right: 8px;
 
   transition: transform 250ms linear;
 }
 
 .form-agreement-input:checked + .form-agreement-icon {
   display: inline-block;
-  width: 15px;
+  width: 16px;
   height: 15px;
   margin-right: 8px;
   background-color: var(--accent-color);
@@ -822,11 +936,17 @@ main {
 
   text-transform: uppercase;
 
-  margin-bottom: 21px;
+  margin-bottom: 20px;
 }
 
 .footer-form {
   display: flex;
+}
+
+.footer-form .title {
+  display: block;
+
+  margin-bottom: 20px;
 }
 
 .footer-form > label {
@@ -835,6 +955,7 @@ main {
 
 .subscription-input {
   background-color: transparent;
+  padding-left: 16px;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -848,8 +969,6 @@ main {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
-
-  padding-left: 12px;
 
   color: rgba(255, 255, 255, 0.6);
 }
